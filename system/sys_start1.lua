@@ -2,50 +2,44 @@ bound = 1
 run = '#01DF01'
 stop = '#DF0101'
 
---[[local indus = {
+Indus = {
     name = 'none',
     machine = nil,
     state = '',
     color = ''
-}]]
-
-info = {
-    {
-        name = 'none',
-        machine = nil,
-        state = '',
-        color = ''
-    },
-    {
-        name = 'none',
-        machine = nil,
-        state = '',
-        color = ''
-    },
-    {
-        name = 'none',
-        machine = nil,
-        state = '',
-        color = ''
-    },
-    {
-        name = 'none',
-        machine = nil,
-        state = '',
-        color = ''
-    }
 }
 
-info[1].name = 'line M'
-info[1].machine = assembly_lineM
-info[2].name = 'line S'
-info[2].machine = assembly_lineS
-info[3].name = 'refine'
-info[3].machine = refine
-info[4].name = 'chimic'
-info[4].machine = chimical
+function Indus:new(o)
+    o = o or {}
+    setmetatable(o, self)
+    self.__index = self
+    return o
+end
 
-replace = function(view, tabVal)
+function Indus:init(name, machine)
+    name = name or 'none'
+    machine = machine or nil
+    self.name = name
+    self.machine = machine
+end
+
+info = {
+    Indus:new(nil),
+    Indus:new(nil),
+    Indus:new(nil),
+    Indus:new(nil),
+    Indus:new(nil),
+    Indus:new(nil)
+}
+
+info[1]:init('line M', assembly_lineM)
+info[2]:init('line S', assembly_lineS)
+info[3]:init('line XS', assembly_lineXS)
+info[4]:init('refine', refine)
+info[5]:init('chimic', chimical)
+info[6]:init('electro', electro)
+
+render = function(view, tabVal)
     local rep = ''
     for k, v in pairs(tabVal) do
         rep = '{{'..k..'}}'

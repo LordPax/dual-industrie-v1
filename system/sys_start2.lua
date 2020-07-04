@@ -6,13 +6,13 @@ controllerMain = function()
     
     local val = {}
     
-    for i = 1, 4 do
+    for i = 1, 6 do
         val['name'..i] = info[i].name
         val['state'..i] = info[i].state
         val['color'..i] = info[i].color
     end
     
-    return replace(viewMain, val)
+    return render(viewMain, val)
 end
 
 status = function(machine)

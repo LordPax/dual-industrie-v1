@@ -6,3 +6,5 @@
 * assembly_lineS
 * refine
 * chimacal
+* electro
+* assembly_lineXS

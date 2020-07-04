@@ -1,3 +1,3 @@
 screen.clear()
-render = controllerMain()
-screen.setHTML(render)
+result = controllerMain()
+screen.setHTML(result)

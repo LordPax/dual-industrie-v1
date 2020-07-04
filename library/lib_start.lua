@@ -28,6 +28,14 @@ viewMain = [[
 			left:522px;
 			top:100px;
 		}
+		.i5{
+			left:10px;
+			top:190px;
+		}
+		.i6{
+			left:522px;
+			top:190px;
+		}
 		.state{
 			float:right
 		}
@@ -43,6 +51,12 @@ viewMain = [[
 		.st4{
 			color:{{color4}};
 		}
+		.st5{
+			color:{{color5}};
+		}
+		.st6{
+			color:{{color6}};
+		}
 	</style>
 	<!--{{infoInd}}-->
 
@@ -57,6 +71,12 @@ viewMain = [[
 	</div>
 	<div class = "ind i4">
 		<div class="name">{{name4}} <span class="state st4">{{state4}}</span></div>
+	</div>
+	<div class = "ind i5">
+		<div class="name">{{name5}} <span class="state st5">{{state5}}</span></div>
+	</div>
+	<div class = "ind i6">
+		<div class="name">{{name6}} <span class="state st6">{{state6}}</span></div>
 	</div>
 </svg>
 ]]
