@@ -57,8 +57,12 @@ viewMain = [[
 		.st6{
 			color:{{color6}};
 		}
+		.img{
+			opacity:0.6;
+		}
 	</style>
 	<!--{{infoInd}}-->
+	<image class="img" xlink:href="https://cdn.discordapp.com/attachments/597133708922978304/597137058988818432/3dlogo.gif" x="256" y="50" height="512" width="512" />
 
 	<div class = "ind i1">
 		<div class="name">{{name1}} <span class="state st1">{{state1}}</span></div>
