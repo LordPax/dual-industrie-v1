@@ -80,3 +80,9 @@ viewMain = [[
 	</div>
 </svg>
 ]]
+
+viewVeille = [[
+<svg width="1024" height="612">
+    <image xlink:href="https://cdn.discordapp.com/attachments/597133708922978304/597137058988818432/3dlogo.gif" x="256" y="50" height="512" width="512" />
+</svg>
+]]
