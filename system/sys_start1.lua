@@ -6,7 +6,8 @@ Indus = {
     name = 'none',
     machine = nil,
     state = '',
-    color = ''
+    color = '',
+    cycle = 0
 }
 
 function Indus:new(o)
@@ -23,14 +24,11 @@ function Indus:init(name, machine)
     self.machine = machine
 end
 
-info = {
-    Indus:new(nil),
-    Indus:new(nil),
-    Indus:new(nil),
-    Indus:new(nil),
-    Indus:new(nil),
-    Indus:new(nil)
-}
+info = {}
+
+for i = 1, 8 do
+    table.insert(info, Indus:new(nil))
+end
 
 info[1]:init('line M', assembly_lineM)
 info[2]:init('line S', assembly_lineS)
@@ -38,6 +36,8 @@ info[3]:init('line XS', assembly_lineXS)
 info[4]:init('refine', refine)
 info[5]:init('chimic', chimical)
 info[6]:init('electro', electro)
+info[7]:init('metal', metal)
+info[8]:init('printer', printer)
 
 render = function(view, tabVal)
     local rep = ''

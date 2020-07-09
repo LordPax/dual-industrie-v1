@@ -8,3 +8,5 @@
 * chimacal
 * electro
 * assembly_lineXS
+* metal
+* printer
