@@ -2,12 +2,19 @@ bound = 1
 run = '#01DF01'
 stop = '#DF0101'
 
+svgWidth = 1024
+svgHeight = 612
+
 Indus = {
     name = 'none',
     machine = nil,
     state = '',
     color = '',
-    cycle = 0
+    cycle = 0,
+    x = 0,
+    y = 0,
+    w = 0,
+    h = 0,
 }
 
 function Indus:new(o)
@@ -17,11 +24,15 @@ function Indus:new(o)
     return o
 end
 
-function Indus:init(name, machine)
+function Indus:init(name, machine, x, y, w, h)
     name = name or 'none'
     machine = machine or nil
     self.name = name
     self.machine = machine
+    self.x = x
+    self.y = y
+    self.w = w
+    self.h = h
 end
 
 info = {}
@@ -30,14 +41,14 @@ for i = 1, 8 do
     table.insert(info, Indus:new(nil))
 end
 
-info[1]:init('line M', assembly_lineM)
-info[2]:init('line S', assembly_lineS)
-info[3]:init('line XS', assembly_lineXS)
-info[4]:init('refine', refine)
-info[5]:init('chimic', chimical)
-info[6]:init('electro', electro)
-info[7]:init('metal', metal)
-info[8]:init('printer', printer)
+info[1]:init('line M', assembly_lineM, 10, 10, 492, 77)
+info[2]:init('line S', assembly_lineS, 522, 10, 492, 77)
+info[3]:init('line XS', assembly_lineXS, 10, 100, 492, 77)
+info[4]:init('refine', refine, 522, 100, 492, 77)
+info[5]:init('chimic', chimical, 10, 190, 492, 77)
+info[6]:init('electro', electro, 522, 190, 492, 77)
+info[7]:init('metal', metal, 10, 280, 492, 77)
+info[8]:init('printer', printer, 522, 280, 492, 77)
 
 render = function(view, tabVal)
     local rep = ''
